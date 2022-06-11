@@ -4,6 +4,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Grid, TextField } from '@mui/material';
 
+import { userRegister } from '../../../services/providers/yourDictionaryProvider';
 import FormError from '../../Core/FormError';
 import { schema } from './validation/schema';
 
@@ -19,7 +20,9 @@ const SignUpForm: React.FC = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
-    console.log(data);
+    const { email, password, name } = data;
+    const a = await userRegister({ email, password, name });
+    console.log(a);
   };
 
   return (

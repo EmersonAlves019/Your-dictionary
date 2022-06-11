@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import {
@@ -10,6 +11,7 @@ import {
   TextField,
 } from '@mui/material';
 
+import { useAuth, useUserInfos } from '../../../context/UserProvider';
 import FormError from '../../Core/FormError';
 import { schema } from './validation/schema';
 
@@ -24,9 +26,20 @@ const SignInForm: React.FC = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
+  const { setUserCredentials } = useUserInfos();
+  const navigate = useNavigate();
+
+  const auth = useAuth();
+
   const onSubmit = (data: any) => {
-    console.log(data);
+    setUserCredentials(data);
   };
+
+  useEffect(() => {
+    if (auth) {
+      navigate('/home');
+    }
+  }, [auth, navigate]);
 
   return (
     <Grid>
