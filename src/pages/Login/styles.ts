@@ -7,6 +7,7 @@ export const LoginPageContainer = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #1565c0;
 `;
 
 export const LoginFormContainer = styled(Paper)`

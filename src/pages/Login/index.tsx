@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 
 import SignInForm from '../../components/Container/SignInForm';
+import SignUpForm from '../../components/Container/SignUpForm';
 import TabPanel from '../../components/Core/TabPanel';
 import { getTagProps } from '../../shared/functions/getTableProps';
 import * as S from './styles';
@@ -37,7 +38,7 @@ const Login: React.FC = () => {
           <SignInForm />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          {/* sign up form */}
+          <SignUpForm />
         </TabPanel>
       </S.LoginFormContainer>
     </S.LoginPageContainer>
