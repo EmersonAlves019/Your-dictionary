@@ -36,6 +36,10 @@ const SignInForm: React.FC = () => {
   };
 
   useEffect(() => {
+    setUserCredentials(null);
+  }, []);
+
+  useEffect(() => {
     if (auth) {
       navigate('/home');
     }

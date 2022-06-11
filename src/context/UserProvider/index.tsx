@@ -53,8 +53,8 @@ export const useUserInfos = (): IUserProvider => {
 };
 
 export const useAuth = (): boolean => {
-  const { auth } = useUserInfos();
-  return auth;
+  const { auth, userCredentials } = useUserInfos();
+  return userCredentials ? auth : false;
 };
 
 export default UserProvider;

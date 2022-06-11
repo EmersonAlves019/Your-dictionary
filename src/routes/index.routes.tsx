@@ -3,6 +3,7 @@ import { useRoutes } from 'react-router';
 
 import Home from '../pages/Home';
 import Login from '../pages/Login';
+import PrivateRoute from './privateRoute';
 
 const Router = () => {
   const routes = [
@@ -12,7 +13,11 @@ const Router = () => {
     },
     {
       path: '/home',
-      element: <Home />,
+      element: (
+        <PrivateRoute>
+          <Home />
+        </PrivateRoute>
+      ),
     },
   ];
 
