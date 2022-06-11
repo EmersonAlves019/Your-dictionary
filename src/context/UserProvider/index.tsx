@@ -5,6 +5,7 @@ import React, {
   useState,
   useEffect,
 } from 'react';
+import { toast } from 'react-toastify';
 
 import { getUser } from '../../services/providers/yourDictionaryProvider';
 import { IHookProvider, IUser, IUserProvider } from './@types';
@@ -23,6 +24,9 @@ const UserProvider: React.FC<IHookProvider> = ({ children }) => {
       getUser(userCredentials.email).then(res => {
         const users = res.data;
         const isAuthenticated = userCredentials.password === users[0]?.password;
+        isAuthenticated
+          ? toast.success('Login success')
+          : toast.error('Login failed');
         setAuth(isAuthenticated);
       });
   }, [userCredentials]);

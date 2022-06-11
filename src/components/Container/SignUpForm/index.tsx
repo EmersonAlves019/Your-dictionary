@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Grid, TextField } from '@mui/material';
@@ -21,8 +22,9 @@ const SignUpForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     const { email, password, name } = data;
-    const a = await userRegister({ email, password, name });
-    console.log(a);
+    const res = await userRegister({ email, password, name });
+    res.success && toast.success('Register success');
+    res.code === 400 && toast.error('User already exists');
   };
 
   return (

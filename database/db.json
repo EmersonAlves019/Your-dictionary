@@ -6,6 +6,12 @@
       "password": "123456",
       "confirmPassword": "123456",
       "id": 1
+    },
+    {
+      "email": "emersondap90@gmail.com",
+      "password": "awdawd",
+      "name": "aaaaaa",
+      "id": 2
     }
   ],
   "userHistory": [],
