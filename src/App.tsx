@@ -1,10 +1,14 @@
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-function App () {
+import Router from './routes/index.routes';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-aaaaaaaaa
-    </div>
-  )
-}
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;

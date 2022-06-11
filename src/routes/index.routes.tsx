@@ -2,9 +2,14 @@ import React from 'react';
 import { useRoutes } from 'react-router';
 
 import Home from '../pages/Home';
+import Login from '../pages/Login';
 
 const Router = () => {
   const routes = [
+    {
+      path: '/',
+      element: <Login />,
+    },
     {
       path: '/home',
       element: <Home />,
