@@ -2,27 +2,27 @@ import styled from 'styled-components';
 
 export const WordListContainer = styled.section`
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
   justify-content: center;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
+  flex-wrap: wrap;
+  margin: 10px;
+
+  width: 96%;
+  height: 96%;
 
   max-height: 680px;
 
   overflow: auto;
 
   &::-webkit-scrollbar {
-    width: 6px; /* width of the entire scrollbar */
+    width: 6px;
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent; /* color of the tracking area */
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
     background: #a9a9a9;
-    border-radius: 20px; /* roundness of the scroll thumb */
+    border-radius: 20px;
   }
 `;

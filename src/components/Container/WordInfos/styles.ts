@@ -48,7 +48,7 @@ export const WordInfosContainer = styled.div`
 `;
 
 export const WordInfosContent = styled.section`
-  height: 60px;
+  height: 100px;
   margin: 16px 0;
   align-self: flex-start;
   position: relative;

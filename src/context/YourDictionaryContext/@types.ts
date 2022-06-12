@@ -18,6 +18,8 @@ export interface IYourDictionaryContext {
   wordHistory: string[] | null;
   setWordHistory: Dispatch<SetStateAction<string[]>>;
   setPage: Dispatch<SetStateAction<number>>;
+  favoriteWords: string[] | null;
+  setFavoriteWords: Dispatch<SetStateAction<string[]>>;
 }
 
 export interface IHookProvider {

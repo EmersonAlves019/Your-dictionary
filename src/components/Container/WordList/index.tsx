@@ -6,6 +6,7 @@ import * as S from './styles';
 interface IWordListProps {
   wordList: string[] | null;
 }
+
 const WordList: React.FC<IWordListProps> = ({ wordList }) => {
   return (
     <S.WordListContainer id="infiniteContainer">

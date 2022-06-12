@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const WordCardContainer = styled.button`
   margin: 4px;
+  width: 45%;
   min-width: 45%;
   max-width: 100px;
   overflow: hidden;

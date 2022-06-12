@@ -26,9 +26,10 @@ const YourDictionaryProvider: React.FC<IHookProvider> = ({
   const [wordList, setWordList] = useState<string[]>([]);
   const [wordSelected, setWordSelected] = useState<string>('Hello');
   const [wordInfos, setWordInfos] = useState<IWordInfos | null | undefined>();
+  const [favoriteWords, setFavoriteWords] = useState<string[]>([]);
   const [wordHistory, setWordHistory] = useState<string[]>([]);
   const [page, setPage] = useState<number>(1);
-  const [size, setSize] = useState<number>(200);
+  const [size, setSize] = useState<number>(50);
   const { userSession } = useUserInfos();
 
   useEffect(() => {
@@ -53,6 +54,7 @@ const YourDictionaryProvider: React.FC<IHookProvider> = ({
   useEffect(() => {
     if (userSession) {
       const newHistory = addWordToHistory(userSession, wordSelected);
+      console.log(newHistory);
       setWordHistory(newHistory);
     }
   }, [wordSelected]);
@@ -68,8 +70,10 @@ const YourDictionaryProvider: React.FC<IHookProvider> = ({
       wordHistory,
       setWordHistory,
       setPage,
+      favoriteWords,
+      setFavoriteWords,
     };
-  }, [wordList, wordSelected, wordInfos, wordHistory]);
+  }, [wordList, wordSelected, wordInfos, wordHistory, favoriteWords]);
 
   return (
     <YourDictionaryContext.Provider value={value}>

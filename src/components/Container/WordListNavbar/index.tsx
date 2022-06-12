@@ -6,12 +6,13 @@ import { useDictionary } from '../../../context/YourDictionaryContext';
 import { getTagProps } from '../../../shared/functions/getTableProps';
 import TabPanel from '../../Core/TabPanel';
 import WordList from '../WordList';
+import WordListPagination from '../WordListPagination';
 import * as S from './styles';
 
 const WordLIstNavbar: React.FC = () => {
   const [value, setValue] = useState(0);
 
-  const { wordList, wordHistory } = useDictionary();
+  const { wordList, wordHistory, favoriteWords } = useDictionary();
 
   const handleChange = (
     _event: any,
@@ -31,10 +32,13 @@ const WordLIstNavbar: React.FC = () => {
       </S.Nav>
 
       <TabPanel value={value} index={0}>
-        <WordList wordList={wordList} />
+        <WordListPagination wordList={wordList} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <WordList wordList={wordHistory} />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <WordList wordList={favoriteWords} />
       </TabPanel>
     </S.ListTabContainer>
   );

@@ -4,9 +4,9 @@ export const WordListContainer = styled.section`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 10px;
+  margin: 10px;
 
-  width: 100%;
+  width: 96%;
   height: 96%;
 
   max-height: 680px;
@@ -14,15 +14,15 @@ export const WordListContainer = styled.section`
   overflow: auto;
 
   &::-webkit-scrollbar {
-    width: 6px; /* width of the entire scrollbar */
+    width: 6px;
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent; /* color of the tracking area */
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
     background: #a9a9a9;
-    border-radius: 20px; /* roundness of the scroll thumb */
+    border-radius: 20px;
   }
 `;

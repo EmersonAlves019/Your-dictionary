@@ -15,10 +15,15 @@ const WordInfos: React.FC = () => {
         <Typography variant="h3">{wordInfos?.word}</Typography>
         <Typography>{wordInfos?.phonetic}</Typography>
         <Audio src={wordInfos?.audio || null} />
+
         <S.WordInfosContent>
-          <FavoriteWord />
-          <Typography variant="h5">meanings:</Typography>
-          <Typography>{wordInfos?.definition}</Typography>
+          {wordInfos?.word && <FavoriteWord />}
+          {wordInfos?.definition && (
+            <>
+              <Typography variant="h5">meanings:</Typography>
+              <Typography>{wordInfos.definition}</Typography>
+            </>
+          )}
         </S.WordInfosContent>
       </Paper>
     </S.WordInfosContainer>

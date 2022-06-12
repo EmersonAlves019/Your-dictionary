@@ -34,4 +34,5 @@ export const removeWordFromFavorites = (userId: string, word: string) => {
     return w !== word;
   });
   setToStorage(`user_${userId}_favorites`, newFavorites);
+  return newFavorites;
 };

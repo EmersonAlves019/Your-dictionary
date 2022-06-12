@@ -11,7 +11,7 @@ import * as S from './styles';
 
 const FavoriteWord: React.FC = () => {
   const { userSession } = useUserInfos();
-  const { wordSelected } = useDictionary();
+  const { wordSelected, setFavoriteWords } = useDictionary();
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -21,9 +21,11 @@ const FavoriteWord: React.FC = () => {
 
   const toggleFavorite = () => {
     if (isFavorite && wordSelected) {
-      removeWordFromFavorites(userSession, wordSelected);
+      const favorites = removeWordFromFavorites(userSession, wordSelected);
+      setFavoriteWords(favorites);
     } else if (wordSelected) {
-      addWordToFavorites(userSession, wordSelected);
+      const favorites = addWordToFavorites(userSession, wordSelected);
+      setFavoriteWords(favorites);
     }
     setIsFavorite(!isFavorite);
   };
