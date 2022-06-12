@@ -27,3 +27,11 @@ export const userRegister = async (body: IUser): Promise<IApiResult> => {
     { ...body },
   );
 };
+export const getWordList = async (
+  page: number | string,
+  limit: number | string,
+) => {
+  const p = page ? `_page=${page}` : '';
+  const l = limit ? `_limit=${limit}` : '';
+  return await request(yourDictionary, `/words${p && l ? `?${p}&${l}` : ''}`);
+};

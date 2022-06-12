@@ -4,18 +4,21 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import UserProvider from './context/UserProvider';
+import YourDictionaryProvider from './context/YourDictionaryContext';
 import Router from './routes/index.routes';
 import { GlobalStyles } from './styles/globalStyles';
 
 const App: React.FC = () => {
   return (
-    <UserProvider>
-      <BrowserRouter>
-        <GlobalStyles />
-        <Router />
-        <ToastContainer limit={2} autoClose={1500} />
-      </BrowserRouter>
-    </UserProvider>
+    <YourDictionaryProvider>
+      <UserProvider>
+        <BrowserRouter>
+          <GlobalStyles />
+          <Router />
+          <ToastContainer limit={2} autoClose={1500} />
+        </BrowserRouter>
+      </UserProvider>
+    </YourDictionaryProvider>
   );
 };
 

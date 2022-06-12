@@ -30,8 +30,9 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start:dev": "react-scripts start",
+    "start:dev": "react-scripts start json-server --watch -p 3333 ./database/db.json",
     "database": "json-server --watch -p 3333 ./database/db.json",
+    "dev": "start:dev database",
     "sync": "npx typesync",
     "build": "react-scripts build",
     "test": "react-scripts test",
