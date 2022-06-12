@@ -14,7 +14,32 @@
       "id": 2
     }
   ],
-  "userHistory": [],
+  "wordHistory": [
+    {
+      "word": "Hello",
+      "isFavorite": false,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "word": "sideburn",
+      "isFavorite": false,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "word": "hydrofracturing",
+      "isFavorite": false,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "word": "anarchic",
+      "isFavorite": false,
+      "userId": 1,
+      "id": 4
+    }
+  ],
   "words": [
     "sideburn",
     "hydrofracturing",

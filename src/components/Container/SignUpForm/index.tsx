@@ -7,6 +7,7 @@ import { Button, Grid, TextField } from '@mui/material';
 
 import { userRegister } from '../../../services/providers/yourDictionaryProvider';
 import FormError from '../../Core/FormError';
+import * as S from './styles';
 import { schema } from './validation/schema';
 
 const textFieldStyle = {
@@ -28,7 +29,7 @@ const SignUpForm: React.FC = () => {
   };
 
   return (
-    <Grid>
+    <S.SignUpContainer>
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           label="Email"
@@ -79,7 +80,7 @@ const SignUpForm: React.FC = () => {
           Sign Un
         </Button>
       </form>
-    </Grid>
+    </S.SignUpContainer>
   );
 };
 

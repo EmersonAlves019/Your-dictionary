@@ -5,10 +5,9 @@ export const ListTabContainer = styled(Paper)`
   display: flex;
   flex-direction: column;
   width: 45%;
-  height: 60%;
+  height: 80%;
   max-width: 550px;
   max-height: 800px;
-  min-height: 600px;
 
   .MuiTab-root {
     color: #333232;

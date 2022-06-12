@@ -12,8 +12,8 @@ const WordCard: React.FC<IWordCardProps> = ({ word }: IWordCardProps) => {
   return (
     <S.WordCardContainer
       type="button"
-      onClick={({ target }: any) => {
-        return setWordSelected(target.innerText);
+      onClick={() => {
+        setWordSelected(word);
       }}
     >
       {word.toUpperCase()}

@@ -28,6 +28,7 @@ const UserProvider: React.FC<IHookProvider> = ({ children }) => {
           ? toast.success('Login success')
           : toast.error('Login failed');
         setAuth(isAuthenticated);
+        setUserSession(users[0]?.id);
       });
   }, [userCredentials]);
 

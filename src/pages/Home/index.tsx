@@ -1,12 +1,15 @@
 import React from 'react';
 
+import WordInfos from '../../components/Container/WordInfos';
 import WordLIstNavbar from '../../components/Container/WordListNavbar';
+import * as S from './styles';
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <S.HomePageContainer>
+      <WordInfos />
       <WordLIstNavbar />
-    </div>
+    </S.HomePageContainer>
   );
 };
 

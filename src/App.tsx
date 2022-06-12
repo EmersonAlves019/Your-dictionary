@@ -10,15 +10,15 @@ import { GlobalStyles } from './styles/globalStyles';
 
 const App: React.FC = () => {
   return (
-    <YourDictionaryProvider>
-      <UserProvider>
+    <UserProvider>
+      <YourDictionaryProvider>
         <BrowserRouter>
           <GlobalStyles />
           <Router />
           <ToastContainer limit={2} autoClose={1500} />
         </BrowserRouter>
-      </UserProvider>
-    </YourDictionaryProvider>
+      </YourDictionaryProvider>
+    </UserProvider>
   );
 };
 

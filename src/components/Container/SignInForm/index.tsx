@@ -13,6 +13,7 @@ import {
 
 import { useAuth, useUserInfos } from '../../../context/UserProvider';
 import FormError from '../../Core/FormError';
+import * as S from './styles';
 import { schema } from './validation/schema';
 
 const textFieldStyle = {
@@ -46,7 +47,7 @@ const SignInForm: React.FC = () => {
   }, [auth, navigate]);
 
   return (
-    <Grid>
+    <S.SignInContainer>
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           label="Email"
@@ -80,7 +81,7 @@ const SignInForm: React.FC = () => {
           Sign In
         </Button>
       </form>
-    </Grid>
+    </S.SignInContainer>
   );
 };
 

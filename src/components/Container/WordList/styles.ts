@@ -4,11 +4,12 @@ export const WordListContainer = styled.section`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 10px;
 
   width: 100%;
   height: 100%;
 
-  max-height: 600px;
+  max-height: 680px;
 
   overflow: auto;
 

@@ -11,12 +11,13 @@ interface ITabPanelProps {
 const TabPanel = ({ children, value, index }: ITabPanelProps) => {
   return (
     <section
+      style={{ height: '90%' }}
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
     >
-      {value === index && <Box sx={{ p: 1 }}>{children}</Box>}
+      {value === index && <>{children}</>}
     </section>
   );
 };

@@ -7,10 +7,11 @@ export const WordCardContainer = styled.button`
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 4px;
-  height: 30px;
+  height: 40px;
   color: #1565c0;
   background-color: #fcfdff;
   border: 1px solid #4196f2;
+  font-size: 0.9rem;
 
   &:hover {
     border: 1px solid #1565c0;
