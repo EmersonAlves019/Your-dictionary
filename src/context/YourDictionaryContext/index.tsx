@@ -6,12 +6,12 @@ import React, {
   useContext,
 } from 'react';
 
-import { getWordInfos } from '../../services/providers/freeDictionaryProvider';
 import {
+  addWordToHistory,
   getWordHistory,
-  getWordList,
-  saveWord,
-} from '../../services/providers/yourDictionaryProvider';
+} from '../../repository/wordsRepository';
+import { getWordInfos } from '../../services/providers/freeDictionaryProvider';
+import { getWordList } from '../../services/providers/yourDictionaryProvider';
 import composeWordInfos from '../../shared/functions/composeWordInfos';
 import { useUserInfos } from '../UserProvider';
 import { IHookProvider, IWordInfos, IYourDictionaryContext } from './@types';
@@ -48,22 +48,14 @@ const YourDictionaryProvider: React.FC<IHookProvider> = ({
 
       setWordInfos(wordInfosData);
     })();
-  }, [wordSelected, wordSelected]);
+  }, [wordSelected]);
 
   useEffect(() => {
-    (async () => {
-      if (userSession) {
-        const res = await getWordHistory(userSession);
-        const wordExists = wordHistory?.find((w: any) => {
-          return w.word === wordSelected;
-        });
-        if (!wordExists) {
-          setWordHistory([...res.data, { word: wordSelected }]);
-          saveWord(wordSelected, false, userSession);
-        }
-      }
-    })();
-  }, [userSession, wordSelected]);
+    if (userSession) {
+      const newHistory = addWordToHistory(userSession, wordSelected);
+      setWordHistory(newHistory);
+    }
+  }, [wordSelected]);
 
   const value = useMemo(() => {
     return {

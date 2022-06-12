@@ -7,7 +7,7 @@ export const WordListContainer = styled.section`
   padding: 10px;
 
   width: 100%;
-  height: 100%;
+  height: 96%;
 
   max-height: 680px;
 

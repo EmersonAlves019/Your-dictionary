@@ -35,28 +35,3 @@ export const getWordList = async (
   const l = limit ? `_limit=${limit}` : '';
   return await request(yourDictionary, `/words${p && l ? `?${p}&${l}` : ''}`);
 };
-
-export const getWordHistory = async (userId: string) => {
-  return await request(
-    yourDictionary,
-    `/wordHistory?userId=${userId}`,
-    EHttpCode.OK,
-    EHttpMethod.GET,
-  );
-};
-
-export const saveWord = async (
-  word: string,
-  isFavorite: boolean,
-  userId: string,
-): Promise<void> => {
-  if (userId) {
-    await request(
-      yourDictionary,
-      '/wordHistory',
-      EHttpCode.Created,
-      EHttpMethod.POST,
-      { word, isFavorite, userId },
-    );
-  }
-};

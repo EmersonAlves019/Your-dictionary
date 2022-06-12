@@ -7,6 +7,7 @@ export const HomePageContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 650px;
 
   @media (min-width: 1100px) {
     flex-direction: row;

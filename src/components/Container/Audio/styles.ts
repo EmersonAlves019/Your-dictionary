@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 export const AudioContainer = styled(AudioPlayer)`
   border-radius: 8px;
-  width: 90%;
+  width: 100%;
   .rhap_progress-filled,
   .rhap_progress-indicator {
     background-color: #1565c0;
