@@ -5,13 +5,14 @@ import Tabs from '@mui/material/Tabs';
 import { useDictionary } from '../../../context/YourDictionaryContext';
 import { getTagProps } from '../../../shared/functions/getTableProps';
 import TabPanel from '../../Core/TabPanel';
+import WordHistoryList from '../WordHistoryList';
 import WordList from '../WordList';
 import * as S from './styles';
 
 const WordLIstNavbar: React.FC = () => {
   const [value, setValue] = useState(0);
 
-  const { wordList } = useDictionary();
+  const { wordList, wordHistory } = useDictionary();
 
   const handleChange = (
     _event: any,
@@ -34,7 +35,7 @@ const WordLIstNavbar: React.FC = () => {
         <WordList wordList={wordList} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <p>history</p>
+        <WordHistoryList wordList={wordHistory} />
       </TabPanel>
     </S.ListTabContainer>
   );

@@ -15,7 +15,7 @@ export interface IYourDictionaryContext {
   setWordSelected: Dispatch<SetStateAction<string>>;
   wordInfos: IWordInfos | null | undefined;
   setWordInfos: Dispatch<SetStateAction<IWordInfos | null | undefined>>;
-  wordHistory: string[] | null | undefined;
+  wordHistory: string[] | null;
   setWordHistory: Dispatch<SetStateAction<string[]>>;
   setPage: Dispatch<SetStateAction<number>>;
 }

@@ -54,11 +54,11 @@ const YourDictionaryProvider: React.FC<IHookProvider> = ({
     (async () => {
       if (userSession) {
         const res = await getWordHistory(userSession);
-        setWordHistory(res.data);
         const wordExists = wordHistory?.find((w: any) => {
           return w.word === wordSelected;
         });
         if (!wordExists) {
+          setWordHistory([...res.data, { word: wordSelected }]);
           saveWord(wordSelected, false, userSession);
         }
       }
