@@ -5,6 +5,7 @@
 
 ### Your dictionary é um web app desenvolvido para que o usuário possa através de uma lista de palavras descobrir o significado, fonética e pronuncia de cada palavra, podendo ver seu histórico de palavras já vistas e palavras favoritadas.
 
+
 #
 ## Tecnologias utilizadas: 
 
@@ -25,5 +26,12 @@
    * Utilizar o comando *`npm run start:dev`* ou *`yarn start:dev`* para rodar o projeto
 
    - Para logar você pode criar um novo usuário ou utilizar o usuário: test@test.com - 123456
+
+#
+
+> This is a challenge by Coodesh
+
+
+
 
 
