@@ -2,9 +2,7 @@ import styled from 'styled-components';
 
 export const WordListContainer = styled.section`
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 10px;
+  margin: 20px 10px;
 
   width: 96%;
   height: 96%;
@@ -12,6 +10,15 @@ export const WordListContainer = styled.section`
   max-height: 680px;
 
   overflow: auto;
+
+  .infinite-scroll-component {
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
 
   &::-webkit-scrollbar {
     width: 6px;

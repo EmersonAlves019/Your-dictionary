@@ -3,13 +3,13 @@ import React from 'react';
 import * as S from './styles';
 
 interface IAudioPlayerProps {
-  src: string | null;
+  src: string | undefined;
 }
 
 const Audio: React.FC<IAudioPlayerProps> = ({ src }) => {
-  return src ? (
-    <S.AudioContainer autoPlayAfterSrcChange={false} src={src} />
-  ) : null;
+  return (
+    <>{src && <S.AudioContainer autoPlayAfterSrcChange={false} src={src} />}</>
+  );
 };
 
 export default Audio;

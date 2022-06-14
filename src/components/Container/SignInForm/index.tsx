@@ -3,13 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import {
-  Button,
-  Checkbox,
-  FormControlLabel,
-  Grid,
-  TextField,
-} from '@mui/material';
+import { Button, TextField } from '@mui/material';
 
 import { useAuth, useUserInfos } from '../../../context/UserProvider';
 import FormError from '../../Core/FormError';
@@ -70,13 +64,6 @@ const SignInForm: React.FC = () => {
           error={!!errors.password}
         />
         <FormError message={errors.password?.message} />
-
-        <FormControlLabel
-          style={{ margin: '16px 0' }}
-          control={<Checkbox checked name="rememberMe" color="primary" />}
-          label="Remember me"
-        />
-
         <Button type="submit" variant="contained" fullWidth>
           Sign In
         </Button>

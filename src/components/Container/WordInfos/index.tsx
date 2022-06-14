@@ -12,19 +12,22 @@ const WordInfos: React.FC = () => {
   return (
     <S.WordInfosContainer>
       <Paper elevation={0}>
-        <Typography variant="h3">{wordInfos?.word}</Typography>
-        <Typography>{wordInfos?.phonetic}</Typography>
-        <Audio src={wordInfos?.audio || null} />
+        <>
+          <Typography variant="h3">{wordInfos?.word}</Typography>
+          <Typography>{wordInfos?.phonetic}</Typography>
+          {console.log(wordInfos?.audio)}
+          <Audio src={wordInfos?.audio} />
 
-        <S.WordInfosContent>
-          {wordInfos?.word && <FavoriteWord />}
-          {wordInfos?.definition && (
-            <>
-              <Typography variant="h5">meanings:</Typography>
-              <Typography>{wordInfos.definition}</Typography>
-            </>
-          )}
-        </S.WordInfosContent>
+          <S.WordInfosContent>
+            {wordInfos?.word && <FavoriteWord />}
+            {wordInfos?.definition && (
+              <>
+                <Typography variant="h5">meanings:</Typography>
+                <Typography>{wordInfos.definition}</Typography>
+              </>
+            )}
+          </S.WordInfosContent>
+        </>
       </Paper>
     </S.WordInfosContainer>
   );

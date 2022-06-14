@@ -3,7 +3,7 @@ import { Dispatch, ReactNode, SetStateAction } from 'react';
 export interface IWordInfos {
   phonetic: string | null;
   word: string | null;
-  audio: string | null;
+  audio: string | undefined;
   definition: string | null;
   example: string | null;
   synonyms: string[] | null;

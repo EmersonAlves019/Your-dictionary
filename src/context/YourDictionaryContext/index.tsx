@@ -6,10 +6,7 @@ import React, {
   useContext,
 } from 'react';
 
-import {
-  addWordToHistory,
-  getWordHistory,
-} from '../../repository/wordsRepository';
+import { addWordToHistory } from '../../repository/wordsRepository';
 import { getWordInfos } from '../../services/providers/freeDictionaryProvider';
 import { getWordList } from '../../services/providers/yourDictionaryProvider';
 import composeWordInfos from '../../shared/functions/composeWordInfos';
@@ -29,7 +26,7 @@ const YourDictionaryProvider: React.FC<IHookProvider> = ({
   const [favoriteWords, setFavoriteWords] = useState<string[]>([]);
   const [wordHistory, setWordHistory] = useState<string[]>([]);
   const [page, setPage] = useState<number>(1);
-  const [size, setSize] = useState<number>(50);
+  const [size, setSize] = useState<number>(100);
   const { userSession } = useUserInfos();
 
   useEffect(() => {
@@ -40,16 +37,18 @@ const YourDictionaryProvider: React.FC<IHookProvider> = ({
           return [...prev, ...res.data];
         });
     })();
-  }, [page, size]);
+  }, [page]);
 
   useEffect(() => {
     (async () => {
-      const res = await getWordInfos(wordSelected);
-      const wordInfosData = composeWordInfos(res.data);
+      if (userSession) {
+        const res = await getWordInfos(wordSelected);
+        const wordInfosData = composeWordInfos(res.data);
 
-      setWordInfos(wordInfosData);
+        setWordInfos(wordInfosData);
+      }
     })();
-  }, [wordSelected]);
+  }, [wordSelected, userSession]);
 
   useEffect(() => {
     if (userSession) {
@@ -57,7 +56,7 @@ const YourDictionaryProvider: React.FC<IHookProvider> = ({
       console.log(newHistory);
       setWordHistory(newHistory);
     }
-  }, [wordSelected]);
+  }, [wordSelected, userSession]);
 
   const value = useMemo(() => {
     return {

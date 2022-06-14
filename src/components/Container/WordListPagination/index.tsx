@@ -15,12 +15,6 @@ const WordListPagination: React.FC<IWordListProps> = ({ wordList }) => {
   return (
     <S.WordListContainer id="infiniteContainer">
       <InfiniteScroll
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-        }}
         dataLength={wordList?.length ?? 0}
         next={() => {
           return setPage(prev => {

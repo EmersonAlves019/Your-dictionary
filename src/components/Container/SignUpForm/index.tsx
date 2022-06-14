@@ -3,7 +3,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Button, Grid, TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 
 import { userRegister } from '../../../services/providers/yourDictionaryProvider';
 import FormError from '../../Core/FormError';

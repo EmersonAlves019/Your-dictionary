@@ -3,8 +3,11 @@ import styled from 'styled-components';
 export const WordListContainer = styled.section`
   display: flex;
   justify-content: center;
+  align-content: flex-start;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 20px 10px;
+
+  gap: 10px;
 
   width: 96%;
   height: 96%;

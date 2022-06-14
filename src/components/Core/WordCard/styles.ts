@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const WordCardContainer = styled.button`
-  margin: 4px;
   width: 45%;
   min-width: 45%;
   max-width: 100px;
@@ -13,6 +12,7 @@ export const WordCardContainer = styled.button`
   background-color: #fcfdff;
   border: 1px solid #4196f2;
   font-size: 0.9rem;
+  cursor: pointer;
 
   &:hover {
     border: 1px solid #1565c0;

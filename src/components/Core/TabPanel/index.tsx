@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Box } from '@mui/material';
-
 interface ITabPanelProps {
   children: React.ReactNode;
   index: number;
